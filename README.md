@@ -1,5 +1,5 @@
-# Python 3 Starter Bot for [The AI Games Go Challenge](theaigames.com)
-### By Alireza Omidi
+# Python 3 Starter Bot for [The AI Games Go Challenge](http://theaigames.com)
+### By Alireza Omidi <alireza530@gmail.com>
 
 ## Downloading
 To download this starter bot, simply enter this command:
