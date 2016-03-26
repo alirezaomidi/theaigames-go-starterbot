@@ -26,6 +26,10 @@ class Controller:
             value = int(value)
         if _type.startswith('your'):
             _type = _type.replace('your', 'my')
+            if _type == 'my_botid':
+                self.go.opponent_botid = 3 - value
+            elif _type == 'my_bot':
+                self.go.opponent_bot = 'player%d' % (3 - int(value[-1]))
         setattr(self.go, _type, value)
 
     def update(self, msg):
@@ -43,7 +47,10 @@ class Controller:
             else:
                 value = int(value)
         else:
-            _type = '%s_%s' % (player, _type)
+            if player.endswith(str(self.go.my_botid)):
+                _type = 'my_points'
+            elif player.endswith(str(self.go.opponent_botid)):
+                _type = 'opponent_points'
             value = int(value)
         setattr(self.go, _type, value)
 
